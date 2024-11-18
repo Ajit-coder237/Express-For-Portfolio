@@ -3,7 +3,9 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import { connect, Schema, model } from "mongoose";
 
-connect("mongodb://localhost:27017/myportfolio");
+connect(
+  "mongodb+srv://pandeyajit233:VLki9XvRGr4di5UI@learnmd.redgc.mongodb.net/"
+);
 
 const blogSchema = new Schema({
   title: String,
@@ -42,7 +44,11 @@ app.put("/api/blogs/:id", async (req, res) => {
   const { id } = req.params;
   const { title, content } = req.body;
   try {
-    const updatedBlog = await Blog.findByIdAndUpdate(id, { title, content }, { new: true });
+    const updatedBlog = await Blog.findByIdAndUpdate(
+      id,
+      { title, content },
+      { new: true }
+    );
     res.json(updatedBlog);
   } catch (error) {
     res.status(500).json({ message: "Error updating blog" });
