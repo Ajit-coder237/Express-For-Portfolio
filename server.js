@@ -4,7 +4,7 @@ import cors from "cors";
 import { connect, Schema, model } from "mongoose";
 
 connect(
-  "mongodb+srv://pandeyajit233:VLki9XvRGr4di5UI@learnmd.redgc.mongodb.net/"
+  "mongodb+srv://pandeyajit233:Ajitsir3512@learnmd.redgc.mongodb.net/"
 );
 
 const blogSchema = new Schema({
